@@ -13,14 +13,15 @@
 import pandas as pd
 
 # We will start by reading in all the converted csv data files using pandas
-BPX_data = pd.read_csv("/Users/liangeric/Desktop/NHANES/DATA/BPX_J.csv")
-BMX_data = pd.read_csv("/Users/liangeric/Desktop/NHANES/DATA/BMX_J.csv")
-DXX_data = pd.read_csv("/Users/liangeric/Desktop/NHANES/DATA/DXX_J.csv")
-LUX_data = pd.read_csv("/Users/liangeric/Desktop/NHANES/DATA/LUX_J.csv")
-OHXREF_data = pd.read_csv("/Users/liangeric/Desktop/NHANES/DATA/OHXREF_J.csv")
+# In the quotations, replace with your file path to the appropriate file.
+BPX_data = pd.read_csv("BPX_J.csv")
+BMX_data = pd.read_csv("DATA/BMX_J.csv")
+DXX_data = pd.read_csv("DXX_J.csv")
+LUX_data = pd.read_csv("LUX_J.csv")
+OHXREF_data = pd.read_csv("OHXREF_J.csv")
 # note I manually changed types to string because of mixed types, this can be cleaned
 # later in analysis
-OHXDEN_data = pd.read_csv("/Users/liangeric/Desktop/NHANES/DATA/OHXDEN_J.csv",dtype = str)
+OHXDEN_data = pd.read_csv("OHXDEN_J.csv",dtype = str)
 # here we change the column type of SEQN to numeric so that we can merge later
 OHXDEN_data["SEQN"] = pd.to_numeric(OHXDEN_data["SEQN"])
 
@@ -35,6 +36,3 @@ masterlist = masterlist.merge(OHXDEN_data,left_on = "SEQN",right_on = "SEQN")
 
 # here we will read out the master list to a csv file that can be used for analysis
 masterlist.to_csv("masterList.csv",index = False)
-
-
-# DONT FORGET TO REMOVE FILE PATHS BEFORE PUSHING
