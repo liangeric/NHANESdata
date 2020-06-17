@@ -1,5 +1,7 @@
 # NHANESdata
-This reads and merges the public data from NHANES, specifically the 2017-2018 examination data.
+This reads and merges the public data from NHANES, specifically the 2017-2018 examination data. This was used as part
+of a challenge I created for the company Pralent, link to the challenge can be found here:
+https://www.pralent.com/challenges/pralent-nhanes-machine-learning-challenge
 
 The TEMP file contains all the directly downloaded public data xpt files from NHANES. 
 
